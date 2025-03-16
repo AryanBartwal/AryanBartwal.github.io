@@ -131,3 +131,17 @@ window.addEventListener('orientationchange', function() {
         });
     }, 100);
 });
+
+// Basic initialization
+document.addEventListener('DOMContentLoaded', function() {
+    // Ensure videos are responsive after orientation change
+    window.addEventListener('orientationchange', function() {
+        setTimeout(function() {
+            const videos = document.querySelectorAll('.video-container');
+            videos.forEach(video => {
+                video.style.height = '0';
+                video.style.paddingBottom = '56.25%';
+            });
+        }, 100);
+    });
+});
