@@ -37,40 +37,22 @@ function onYouTubeIframeAPIReady() {
     for (let i = 1; i <= 5; i++) {
         players[`video${i}`] = new YT.Player(`video${i}`, {
             events: {
-                'onReady': onPlayerReady,
                 'onStateChange': onPlayerStateChange
             }
         });
     }
 }
 
-function onPlayerReady(event) {
-    // Player is ready
-}
-
-function onPlayerStateChange(event) {
-    // Handle state changes if needed
-}
-
-function playVideo(videoId) {
-    if (players[videoId]) {
-        players[videoId].playVideo();
-    }
-}
-
-function pauseVideo(videoId) {
-    if (players[videoId]) {
-        players[videoId].pauseVideo();
-    }
-}
-
-// Stop all other videos when one starts playing
+// When a video starts playing, pause all others
 function onPlayerStateChange(event) {
     if (event.data == YT.PlayerState.PLAYING) {
-        for (let id in players) {
-            if (players[id] !== event.target) {
-                players[id].pauseVideo();
+        const currentPlayer = event.target;
+        
+        // Loop through all players and pause others
+        Object.values(players).forEach(player => {
+            if (player !== currentPlayer) {
+                player.pauseVideo();
             }
-        }
+        });
     }
 }
