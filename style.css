@@ -520,13 +520,15 @@ body {
 .video-container {
     position: relative;
     width: 100%;
-    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    padding-bottom: 56.25%;
     height: 0;
     overflow: hidden;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     background: #000;
     margin: 20px 0;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .video-container iframe {
@@ -584,6 +586,7 @@ body {
     justify-content: center;
     width: 35px;
     height: 35px;
+    touch-action: manipulation;
 }
 
 .fullscreen-button:hover {
