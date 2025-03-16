@@ -58,3 +58,31 @@ fullscreenButtons.forEach(button => {
         }
     });
 });
+
+// Handle video playback on mobile
+document.addEventListener('DOMContentLoaded', function() {
+    const videoContainers = document.querySelectorAll('.video-container');
+    
+    videoContainers.forEach(container => {
+        const iframe = container.querySelector('iframe');
+        
+        // Add touch event handling for mobile
+        container.addEventListener('touchstart', function(e) {
+            if (e.target.classList.contains('fullscreen-button')) {
+                e.preventDefault();
+                if (document.fullscreenEnabled) {
+                    container.requestFullscreen();
+                }
+            }
+        });
+        
+        // Handle orientation change
+        window.addEventListener('orientationchange', function() {
+            setTimeout(function() {
+                const width = container.offsetWidth;
+                iframe.style.width = width + 'px';
+                iframe.style.height = (width * 0.5625) + 'px'; // 16:9 aspect ratio
+            }, 100);
+        });
+    });
+});

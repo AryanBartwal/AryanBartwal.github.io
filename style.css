@@ -536,6 +536,35 @@ body {
     width: 100%;
     height: 100%;
     border: none;
+    z-index: 1;
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+    .video-container {
+        margin: 15px 0;
+        border-radius: 8px;
+    }
+    
+    .video-container iframe {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+    .video-container {
+        margin: 10px 0;
+    }
+}
+
+/* Landscape mode optimization */
+@media (orientation: landscape) and (max-width: 896px) {
+    .video-container {
+        width: 90%;
+        margin: 10px auto;
+    }
 }
 
 /* Fullscreen button */
