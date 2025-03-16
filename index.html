@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My E-Portfolio</title>
+    <!-- Make sure these paths are correct -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-logo">AB</div>
+        <ul class="nav-links">
+            <li><a href="#home" class="nav-link active">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#resume" class="nav-link">Resume</a></li>
+            <li><a href="#learning" class="nav-link">Learning Journey</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home">
+        <div class="home-content">
+            <div class="text-content">
+                <h1 class="main-heading">E-Portfolio</h1>
+                <h2 class="sub-heading">Hi, I'm Aryan Bartwal</h2>
+                <h3 class="role-heading">Front-End Developer | ML & Deep Learning Engineer</h3>
+                <p class="tagline">Building intelligent web solutions & AI-powered applications</p>
+                <div class="cta-buttons">
+                    <button onclick="document.getElementById('learning').scrollIntoView({behavior: 'smooth'})" class="btn primary-btn">Show My Work</button>
+                    <button onclick="window.open('tel:+918630554769', '_blank')" class="btn primary-btn">Contact Me</button>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com/AryanBartwal" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/aryan-bartwal" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:your.email@example.com"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="scroll-down">
+                <span>Scroll Down</span>
+                <div class="arrow"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="profile-section">
+                    <div class="profile-image">
+                        <img src="WhatsApp Image 2025-03-16 at 15.29.21_33b0bd7d.jpg" alt="Aryan Bartwal">
+                    </div>
+                    <div class="quick-info">
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Dehradun, India</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>B.Tech Student at GEHU</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-laptop-code"></i>
+                            <span>Full Stack Developer</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-brain"></i>
+                            <span>AI/ML Engineer</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <div class="bio">
+                        <h3>Who I Am</h3>
+                        <p>I'm a passionate technologist with expertise in web development and artificial intelligence. As a B.Tech student at Graphic Era Hill University, I combine creative front-end development with cutting-edge AI solutions to build innovative applications that solve real-world problems.</p>
+                        
+                        <p>My journey in technology has led me to master both web development and machine learning, allowing me to create intelligent web applications that leverage the power of AI.</p>
+                    </div>
+
+                    <div class="expertise-areas">
+                        <h3>Areas of Expertise</h3>
+                        <div class="expertise-grid">
+                            <div class="expertise-card">
+                                <i class="fas fa-code"></i>
+                                <h4>Web Development</h4>
+                                <p>Creating responsive and interactive web applications using modern frameworks and technologies.</p>
+                            </div>
+                            <div class="expertise-card">
+                                <i class="fas fa-brain"></i>
+                                <h4>Machine Learning</h4>
+                                <p>Developing ML models for classification, regression, and computer vision applications.</p>
+                            </div>
+                            <div class="expertise-card">
+                                <i class="fas fa-network-wired"></i>
+                                <h4>Deep Learning</h4>
+                                <p>Building and training neural networks for complex pattern recognition and analysis.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skills-section">
+                        <h3>Technical Skills</h3>
+                        <div class="skills-grid">
+                            <!-- Web Development -->
+                            <div class="skill-category">
+                                <h4>Web Development</h4>
+                                <div class="skill-cards">
+                                    <div class="skill-card">
+                                        <i class="fab fa-html5"></i>
+                                        <span>HTML5</span>
+                                    </div>
+                                    <div class="skill-card">
+                                        <i class="fab fa-css3-alt"></i>
+                                        <span>CSS3</span>
+                                    </div>
+                                    <div class="skill-card">
+                                        <i class="fab fa-js"></i>
+                                        <span>JavaScript</span>
+                                    </div>
+                                    <div class="skill-card">
+                                        <i class="fab fa-react"></i>
+                                        <span>React</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- AI & ML -->
+                            <div class="skill-category">
+                                <h4>AI & ML</h4>
+                                <div class="skill-cards">
+                                    <div class="skill-card">
+                                        <i class="fab fa-python"></i>
+                                        <span>Python</span>
+                                    </div>
+                                    <div class="skill-card">
+                                        <i class="fas fa-brain"></i>
+                                        <span>TensorFlow</span>
+                                    </div>
+                                    <div class="skill-card">
+                                        <i class="fas fa-chart-network"></i>
+                                        <span>PyTorch</span>
+                                    </div>
+                                    <div class="skill-card">
+                                        <i class="fas fa-robot"></i>
+                                        <span>Scikit-learn</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Tools & Technologies -->
+                            <div class="skill-category">
+                                <h4>Tools & Technologies</h4>
+                                <div class="skill-cards">
+                                    <div class="skill-card">
+                                        <i class="fab fa-git-alt"></i>
+                                        <span>Git</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume">
+        <div class="container">
+            <h2>My Resume</h2>
+            <div class="resume-container">
+                <div class="resume-frame">
+                    <iframe src="AryanBartwal_resume.pdf" class="resume-pdf"></iframe>
+                </div>
+                <a href="AryanBartwal_resume.pdf" download class="download-btn">
+                    <i class="fas fa-download"></i> Download Resume
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Journey Section -->
+    <section id="learning">
+        <div class="container">
+            <h2>Learning Journey</h2>
+            <div class="timeline">
+                <!-- Day 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Day 1 - Self Introduction</h3>
+                        <p>A basic self-introduction covering my name, educational background, and career aspirations. This serves as the foundation for more detailed introductions in the following days.</p>
+                        <div class="video-container">
+                            <iframe 
+                                src="https://www.youtube.com/embed/YOUR_VIDEO_ID_1" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="skills-container">
+                            <span class="skill-tag">Self Introduction</span>
+                            <span class="skill-tag">Communication</span>
+                            <span class="skill-tag">Presentation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Day 2 - Self Introduction using Sixer Theory</h3>
+                        <p>An enhanced self-introduction using the Sixer Theory framework, incorporating details about my family background, hobbies, and personal interests. This comprehensive introduction includes my parents' professions, valuable life lessons learned from them, and how my hobbies have contributed to my personal growth.</p>
+                        <div class="video-container">
+                            <iframe 
+                                src="https://www.youtube.com/embed/YOUR_VIDEO_ID_2" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="skills-container">
+                            <span class="skill-tag">Sixer Theory</span>
+                            <span class="skill-tag">Family Values</span>
+                            <span class="skill-tag">Personal Growth</span>
+                            <span class="skill-tag">Life Lessons</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 3 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Day 3 - Concise 5-Line Self Introduction</h3>
+                        <p>A powerful and precise self-introduction condensed into just 5 lines, demonstrating the ability to communicate effectively while maintaining impact.</p>
+                        <div class="video-container">
+                            <iframe 
+                                src="https://www.youtube.com/embed/YOUR_VIDEO_ID_3" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="skills-container">
+                            <span class="skill-tag">Concise Communication</span>
+                            <span class="skill-tag">Core Message Delivery</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 4 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Day 4 - Movie Review & Learning Integration</h3>
+                        <p>A comprehensive movie review highlighting my favorite dialogues, personal insights, and key takeaways. I also connect these elements with concepts learned in class.</p>
+                        <div class="video-container">
+                            <iframe 
+                                src="https://www.youtube.com/embed/YOUR_VIDEO_ID_4" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="skills-container">
+                            <span class="skill-tag">Critical Analysis</span>
+                            <span class="skill-tag">Content Integration</span>
+                            <span class="skill-tag">Concept Application</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 5 -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Day 5 - Women Safety Debate</h3>
+                        <p>A debate on women's safety where I presented my viewpoints and defended them against the teacher's counterarguments, demonstrating critical thinking and argumentation skills.</p>
+                        <div class="video-container">
+                            <iframe 
+                                src="https://www.youtube.com/embed/YOUR_VIDEO_ID_5" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="skills-container">
+                            <span class="skill-tag">Debate Skills</span>
+                            <span class="skill-tag">Critical Thinking</span>
+                            <span class="skill-tag">Social Awareness</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Make sure script is at the end of body -->
+    <script src="script.js"></script>
+</body>
+</html>
