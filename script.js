@@ -1,89 +1,57 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const scrollDown = document.querySelector('.scroll-down');
-    const aboutSection = document.querySelector('#about');
-
-    if (scrollDown && aboutSection) {
-        scrollDown.addEventListener('click', function() {
-            aboutSection.scrollIntoView({ 
-                behavior: 'smooth',
-                block: 'start'
-            });
-        });
-    }
-
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 100) {
-            scrollDown.style.opacity = '0';
-        } else {
-            scrollDown.style.opacity = '1';
-        }
-    });
+// Typing Animation
+var typed = new Typed(".typing", {
+    strings: ["Web Developer", "Programmer", "Student"],
+    typeSpeed: 100,
+    backSpeed: 60,
+    loop: true
 });
 
-document.title = "Aryan Bartwal | E-Portfolio";
+// Toggle Menu
+let menuIcon = document.querySelector('#menu-icon');
+let navbar = document.querySelector('.navbar');
 
-// Debug flag
-const DEBUG = true;
-
-// Log function
-function log(message) {
-    if (DEBUG) {
-        console.log(`[Debug] ${message}`);
-    }
-}
-
-// YouTube video IDs
-const videoIds = {
-    'player1': 'TT0WcGXWGZU',
-    'player2': 'O6I5oJmHDLs',
-    'player3': 'WQU4ryfG6JE',
-    'player4': 'SQc1OByXw-Q',
-    'player5': 'qbKHfqunTso'
+menuIcon.onclick = () => {
+    menuIcon.classList.toggle('bx-x');
+    navbar.classList.toggle('active');
 };
 
-// Load YouTube API
-log('Starting to load YouTube API');
-const tag = document.createElement('script');
-tag.src = "https://www.youtube.com/iframe_api";
-const firstScriptTag = document.getElementsByTagName('script')[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+// Scroll Sections
+let sections = document.querySelectorAll('section');
+let navLinks = document.querySelectorAll('header nav a');
 
-// Store players
-let players = {};
+window.onscroll = () => {
+    sections.forEach(sec => {
+        let top = window.scrollY;
+        let offset = sec.offsetTop - 100;
+        let height = sec.offsetHeight;
+        let id = sec.getAttribute('id');
 
-// Simple method to create embedded videos
-function createEmbeddedVideos() {
-    log('Creating embedded videos');
-    Object.entries(videoIds).forEach(([playerId, videoId]) => {
-        const playerDiv = document.getElementById(playerId);
-        if (playerDiv) {
-            log(`Creating player for ${playerId}`);
-            const iframe = document.createElement('iframe');
-            iframe.src = `https://www.youtube.com/embed/${videoId}`;
-            iframe.width = '100%';
-            iframe.height = '100%';
-            iframe.allowFullscreen = true;
-            iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
-            iframe.frameBorder = '0';
-            playerDiv.appendChild(iframe);
-            log(`Player ${playerId} created`);
-        } else {
-            log(`Error: Could not find element with id ${playerId}`);
+        if (top >= offset && top < offset + height) {
+            navLinks.forEach(links => {
+                links.classList.remove('active');
+            });
+            document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
         }
     });
-}
 
-// Initialize when DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
-    log('DOM Content Loaded');
-    createEmbeddedVideos();
+    // Sticky Header
+    let header = document.querySelector('header');
+    header.classList.toggle('sticky', window.scrollY > 100);
+
+    // Remove Toggle Icon and Navbar when clicking navbar links (scroll)
+    menuIcon.classList.remove('bx-x');
+    navbar.classList.remove('active');
+};
+
+// Scroll Reveal
+ScrollReveal({
+    reset: true,
+    distance: '80px',
+    duration: 2000,
+    delay: 200
 });
 
-// Backup: If YouTube API fails, still show embedded videos
-window.onYouTubeIframeAPIReady = function() {
-    log('YouTube API Ready');
-    // If videos haven't been created yet, create them
-    if (Object.keys(players).length === 0) {
-        createEmbeddedVideos();
-    }
-}
+ScrollReveal().reveal('.home-content, .heading', { origin: 'top' });
+ScrollReveal().reveal('.home-img img, .services-container, .portfolio-box, .contact form', { origin: 'bottom' });
+ScrollReveal().reveal('.home-content h1, .about-img img', { origin: 'left' });
+ScrollReveal().reveal('.home-content h3, .home-content p, .about-content', { origin: 'right' });
